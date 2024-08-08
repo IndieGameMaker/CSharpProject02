@@ -75,7 +75,11 @@ public class Orc : Enemy
 
     public override void EnemyDie(string param)
     {
+        // 부모 클래스의 EnemyDie 메소드를 실행
         base.EnemyDie(param);
+
+        // Orc 로직을 구현
+        Console.WriteLine("비명를 지르면서 죽고 무기를 떨어트린다.");
     }
 }
 
@@ -101,6 +105,7 @@ class Program
         Console.WriteLine(goblin.Name);
 
         goblin.Hp = 0;
+        orc.Hp = 0;
 
 
         // // 1. 일반적인 클래스 생성및 할당
