@@ -56,7 +56,10 @@ public class Enemy
         }
     }
 
+    private void EnemyDie()
+    {
 
+    }
 }
 
 class Program
