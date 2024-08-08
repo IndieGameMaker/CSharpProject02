@@ -38,7 +38,7 @@ public class Enemy
     //private float speed = 10.0f;
 
     // 프로퍼티(Property) - 외부에 노출시킬 속성
-    public string Name { get; set; }
+    public string? Name { get; set; }
     // Auto Property
     public float Speed { get; set; }
 
@@ -58,7 +58,7 @@ public class Enemy
     public virtual void EnemyDie(string param)
     {
         // 몬스터가 사망하는 로직 처리
-        Console.WriteLine($"{param} is dead!!!");
+        Console.WriteLine($"부모 클래스 : {param} is dead!!!");
     }
 }
 
@@ -79,7 +79,7 @@ public class Orc : Enemy
         base.EnemyDie(param);
 
         // Orc 로직을 구현
-        Console.WriteLine("비명를 지르면서 죽고 무기를 떨어트린다.");
+        Console.WriteLine("자식 클래스 : 비명를 지르면서 죽고 무기를 떨어트린다.");
     }
 }
 
