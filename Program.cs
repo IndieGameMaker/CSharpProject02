@@ -1,4 +1,6 @@
-﻿namespace CSharpProject02;
+﻿using MyWork;
+
+namespace CSharpProject02;
 
 /* 
 # 클래스
@@ -107,6 +109,11 @@ class Program
         goblin.Hp = 0;
         orc.Hp = 0;
 
+        // TypeParameter
+        // 클래스 생성(할당)
+        // MyWork.TypeParameter tp = new MyWork.TypeParameter();
+        TypeParameter tp = new TypeParameter();
+        tp.Work();
 
         // // 1. 일반적인 클래스 생성및 할당
         // Enemy orc = new Enemy();
