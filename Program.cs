@@ -50,16 +50,34 @@ public class Enemy
             this.hp = value;
             if (hp <= 0)
             {
-                // 몬스터가 사망하는 로직 처리
-                Console.WriteLine($"{Name} is dead!!!");
+                EnemyDie(Name);
             }
         }
     }
 
-    private void EnemyDie()
+    private void EnemyDie(string param)
     {
-
+        // 몬스터가 사망하는 로직 처리
+        Console.WriteLine($"{param} is dead!!!");
     }
+}
+
+// Enemy 클래스를 상속한 오크
+public class Orc : Enemy
+{
+    // 생성자 constructer
+    public Orc()
+    {
+        this.Name = "오크";
+        this.Hp = 200;
+        this.Speed = 50;
+    }
+}
+
+public class Goblin : Enemy
+{
+    // 파라메터가 있는 생성자
+
 }
 
 class Program
