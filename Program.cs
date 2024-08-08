@@ -55,7 +55,7 @@ public class Enemy
         }
     }
 
-    private void EnemyDie(string param)
+    public virtual void EnemyDie(string param)
     {
         // 몬스터가 사망하는 로직 처리
         Console.WriteLine($"{param} is dead!!!");
@@ -71,6 +71,11 @@ public class Orc : Enemy
         this.Name = "오크";
         this.Hp = 200;
         this.Speed = 50;
+    }
+
+    public override void EnemyDie(string param)
+    {
+        base.EnemyDie(param);
     }
 }
 
@@ -89,19 +94,27 @@ class Program
 {
     static void Main(string[] args)
     {
-        // 1. 일반적인 클래스 생성및 할당
-        Enemy orc = new Enemy();
-        orc.Name = "Orc";
-        orc.Hp = 0;
+        Enemy orc = new Orc();
+        Goblin goblin = new Goblin("고블린", 50, 200);
 
-        // 2.
-        Enemy goblin = new Enemy()
-        {
-            Name = "Goblin",
-            Hp = 200,
-            Speed = 100
-        };
+        Console.WriteLine(orc.Name);
+        Console.WriteLine(goblin.Name);
 
-        Console.WriteLine($"Enemy's name is {orc.Name}");
+        goblin.Hp = 0;
+
+
+        // // 1. 일반적인 클래스 생성및 할당
+        // Enemy orc = new Enemy();
+        // orc.Name = "Orc";
+        // orc.Hp = 0;
+
+        // // 2.
+        // Enemy goblin = new Enemy()
+        // {
+        //     Name = "Goblin",
+        //     Hp = 200,
+        //     Speed = 100
+        // };
+        // Console.WriteLine($"Enemy's name is {orc.Name}");
     }
 }
