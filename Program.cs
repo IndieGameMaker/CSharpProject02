@@ -77,7 +77,12 @@ public class Orc : Enemy
 public class Goblin : Enemy
 {
     // 파라메터가 있는 생성자
-
+    public Goblin(string _name, int _hp, int _speed)
+    {
+        this.Name = _name;
+        this.Hp = _hp;
+        this.Speed = _speed;
+    }
 }
 
 class Program
