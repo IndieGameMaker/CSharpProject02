@@ -33,16 +33,14 @@
 public class Enemy
 {
     // 멤버변수 (기본적으로 외부 접근 금지)
-    private string name;
+    //private string name;
     private int hp = 100;
-    private float speed = 10.0f;
+    //private float speed = 10.0f;
 
     // 프로퍼티(Property) - 외부에 노출시킬 속성
-    public string Name
-    {
-        get { return this.name; }
-        set { this.name = value; }
-    }
+    public string Name { get; set; }
+    // Auto Property
+    public float Speed { get; set; }
 
     public int Hp
     {
@@ -53,19 +51,30 @@ public class Enemy
             if (hp <= 0)
             {
                 // 몬스터가 사망하는 로직 처리
-                Console.WriteLine($"{name} is dead!!!");
+                Console.WriteLine($"{Name} is dead!!!");
             }
         }
     }
+
+
 }
 
 class Program
 {
     static void Main(string[] args)
     {
+        // 1. 일반적인 클래스 생성및 할당
         Enemy orc = new Enemy();
         orc.Name = "Orc";
         orc.Hp = 0;
+
+        // 2.
+        Enemy goblin = new Enemy()
+        {
+            Name = "Goblin",
+            Hp = 200,
+            Speed = 100
+        };
 
         Console.WriteLine($"Enemy's name is {orc.Name}");
     }
